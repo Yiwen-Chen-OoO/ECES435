@@ -12,10 +12,7 @@ for i=1:length(Q)
     [peaksnr] = ImgCompress(PATH,Q(i));
 end
 
-PATH2 = 'baboon.tif';
-for i=1:length(Q)
-    figure(i+5);
-    [peaksnr] = ImgCompress(PATH2,Q(i));
-end
+PATH = 'babbon.tif';
+[peaksnr] = ImgCompress(PATH,Q_factor)
 
 
