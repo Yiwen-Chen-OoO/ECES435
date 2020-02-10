@@ -28,7 +28,7 @@ Q_s = [6  4  4  6 10 16 20 24;
  29 37 38 39 45 40 41 40;
  ];
 Q1 = ones(8);
-C_Filesize = JpegEncode(PATH,Q_original);
+C_Filesize = JpegEncode(PATH,Q_Original);
 fprintf('Comressed file size %d\n',C_Filesize);
 [Dimage,iQ] = JpegDecode();
 

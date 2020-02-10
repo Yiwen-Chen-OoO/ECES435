@@ -14,7 +14,7 @@ for i = 1:r/8
     end
 end
 Len=JPEG_entropy_encode(r,c,8,Q,Text,'',0);
-JPEGSIZE = dir('JPEG.jpg').Bytes
+JPEGSIZE = dir('JPEG.jpg').bytes
 
 
 
