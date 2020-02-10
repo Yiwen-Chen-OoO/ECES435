@@ -1,4 +1,4 @@
-function [outputArg1,outputArg2] = JpegEncode(PATH,Q)
+function [JPEGSIZE] = JpegEncode(PATH,Q)
 %UNTITLED6 Summary of this function goes here
 %   Detailed explanation goes here
 image = imread(PATH);
@@ -14,7 +14,8 @@ for i = 1:r/8
     end
 end
 Len=JPEG_entropy_encode(r,c,8,Q,Text,'',0);
+JPEGSIZE = dir('JPEG.jpg').Bytes
 
 
-end
+
 
