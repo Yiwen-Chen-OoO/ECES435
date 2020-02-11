@@ -16,5 +16,6 @@ function [Dimage,iQ] = JpegDecode()
 
         end
     end
-imshow(uint8(Dimage));
+    Dimage = uint8(Dimage);
+imshow(Dimage);
 end

@@ -1,4 +1,4 @@
-close all; clear all; clc;
+%close all; clear all; clc;
 format compact;
 PATH = 'peppers.tif';
 Q_Original = [16 11 10 16 24 40 51 61;
@@ -28,21 +28,15 @@ Q_s = [6  4  4  6 10 16 20 24;
  29 37 38 39 45 40 41 40;
  ];
 Q1 = ones(8);
-C_Filesize = JpegEncode(PATH,Q_Original);
-fprintf('Comressed file size %d\n',C_Filesize);
+C_Filesize = JpegEncode(PATH,Q_me);
+
 [Dimage,iQ] = JpegDecode();
 
-% [r,c] = size(image);
-% Text = zeros(r*c/64,64);
-% for i = 1:r/8
-%     for j = 1:c/8
-%         block = image((i-1)*8+1:i*8,(j-1)*8+1:j*8);
-%         DCT = dct2(block);
-%         Q_DCT = DCT./Q;
-%         zVec = ZigzagMtx2Vector(Q_DCT);
-%         Text(8*8*(i-1)+j,:) = zVec;
-%     end
-% end
-% Len=JPEG_entropy_encode(r,c,8,Q,Text,'',0);
+[PEAKSNR, SNR] = psnr(Dimage, imread(PATH));
+fprintf('Comressed file size %d\n',C_Filesize);
+fprintf('PSNR = %.4f\n',PEAKSNR);
+iQ
+
+
 
 
