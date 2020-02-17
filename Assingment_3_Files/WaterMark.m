@@ -10,7 +10,7 @@ for i = 1:8
         Result = Result + (2^(i-1))*getPlane(Watermark,8);
     end
 end
-Img_bit = Result;
+Img_bit = uint8(Result);
 end
 
 

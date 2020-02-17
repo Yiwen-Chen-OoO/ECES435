@@ -9,7 +9,7 @@ PATH = {'peppers.tif','baboon.tif','LSBwmk1.tiff','LSBwmk2.tiff','LSBwmk3.tiff'}
 % end
 
 Image = imread('peppers.tif');
-wtmk = imread('baboon.tif');
+wtmk = imread('Barbara.bmp');
 New = WaterMark(Image, wtmk,3);
 figure(1)
 imshow(Image);
