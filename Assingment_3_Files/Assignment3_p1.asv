@@ -16,5 +16,3 @@ figure(j+1)
 imshow(Image);
 figure(j+2)
 imgSeperate(New)
-
-

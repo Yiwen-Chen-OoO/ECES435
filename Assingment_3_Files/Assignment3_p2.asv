@@ -1,0 +1,33 @@
+close all; clear all; clc;
+format compact;
+
+Image = imread('peppers.tif');
+Wtmk = imread('Barbara.bmp');
+
+
+%% Generate Look Up Table
+
+key = 0;
+rng(key);
+LUTvals= rand(1,256) > .5;
+
+% Arguments Image, wtmk, key
+% assume image and water mark share the same size
+[r,c] = size(Image);
+Bk = zeros(r,c);
+for i = 1:r
+    for j = 1:c
+        Bk(i,j) = LUTvals(Image(i,j)+1);
+        W(i,j) = LUTvals(Wtmk(i,j)+1);
+        if Bk(i,j) ~= W(i,j)
+            Image(i,j) = getIndex(
+    end
+end
+
+
+
+
+
+
+
+
