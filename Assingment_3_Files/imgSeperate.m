@@ -1,5 +1,5 @@
 function [] = imgSeperate(Image)
-% this function was used to seperated a uint8 image
+% this function was used to seperated a uint8 image by bit plane
 
 for i = 1:8 %seperate bit plane
     Img_b = getPlane(Image,i); %the i th bit plane seperation

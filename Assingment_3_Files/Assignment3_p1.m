@@ -8,19 +8,32 @@ format compact;
 %the path of image file, will be used
 PATH = {'peppers.tif','baboon.tif','LSBwmk1.tiff','LSBwmk2.tiff','LSBwmk3.tiff'};
 %% Extract Hidden Message 
-% Bit Plane Seperation and Display for Pepper, Babbon, LSBwmk1,
+%Bit Plane Seperation and Display for File in PATH
+
 for j = 1:length(PATH)
 figure(j)
 Image = imread(PATH{j});% load the image #j 
 imgSeperate(Image);%Bit Plane Seperation and Display
 end
 
+%% Watermark 
+% replaces the N least significant bit planes from one image with the N most
+% significant bit planes from another imag
 Image = imread('peppers.tif');
 wtmk = imread('Barbara.bmp');
-New = WaterMark(Image, wtmk,1);
-figure(j+1)
-imshow(Image);
-figure(j+2)
-imgSeperate(New)
+
+j = j + 1;
+for i = 1:8
+    
+    figure(j)
+    subplot(2,4,i)
+    New = WaterMark(Image, wtmk,i);
+    imshow(New);
+    
+    %figure(i+j)
+    %imgSeperate(New)
+    
+end
+
 
 
