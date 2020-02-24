@@ -1,4 +1,4 @@
-function [Img_bit] = WaterMark(Original,Watermark,bit_plane)
+function [Img_bit] = LSBWaterMark(Original,Watermark,bit_plane)
 % N least signicant bit planes from one image with the N most
 % signigcant bit planes from another image
 

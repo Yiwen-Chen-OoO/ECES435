@@ -1,5 +1,5 @@
 %% Assignment3 Part I 
-% Yiwen Chen | Yumeng Yang | Wanyi Li
+% Yiwen Chen | Yumeng Yang | Wanyi Ying
 % Date: 02/21/2020
 % Language: MATLAB
 
@@ -16,10 +16,11 @@ Image = imread(PATH{j});% load the image #j
 imgSeperate(Image);%Bit Plane Seperation and Display
 end
 
-%% Watermark 
+%% LSBWaterMark 
 % replaces the N least significant bit planes from one image with the N most
 % significant bit planes from another imag
 Image = imread('peppers.tif');
+%also do with baboon 
 wtmk = imread('Barbara.bmp');
 
 j = j + 1;
@@ -27,12 +28,12 @@ for i = 1:8
     
     figure(j)
     subplot(2,4,i)
-    New = WaterMark(Image, wtmk,i);
+    New = LSBWaterMark(Image, wtmk,i);
     imshow(New);
     
+
     %figure(i+j)
-    %imgSeperate(New)
-    
+    %imgSeperate(New)    
 end
 
 
