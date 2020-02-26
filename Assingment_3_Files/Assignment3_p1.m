@@ -30,7 +30,8 @@ for i = 1:8
     subplot(2,4,i)
     New = LSBWaterMark(Image, wtmk,i);
     imshow(New);
-    
+    peaksnr = psnr(New,Image);
+    title(['PSNR = ',num2str(peaksnr)])
 
     %figure(i+j)
     %imgSeperate(New)    

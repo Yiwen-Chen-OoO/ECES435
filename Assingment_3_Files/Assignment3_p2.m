@@ -17,6 +17,10 @@ for i = 1:length(PATH)
     key = 0;%key assigned
     [ImageWMK(:,:,i)] = YMembed(Image,Wtmk,key);%embed info
     imshow(ImageWMK(:,:,i)) %show embeded image
+    
+    PATH{i}
+    peaksnr = psnr(ImageWMK(:,:,i),Image)
+    title(['PSNR of ',PATH{i},'=',num2str(peaksnr)])
     figure(2*i)
     imgSeperate(ImageWMK(:,:,i));
 end
