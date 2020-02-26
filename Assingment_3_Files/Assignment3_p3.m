@@ -8,7 +8,7 @@ peppers0 = imread('peppers0.tiff');
 %% LSB watermark manipulation
 peppersLSB = LSBWaterMark(peppers, Wtmk,3);
 baboonLSB = LSBWaterMark(baboon, Wtmk,3);
-LSBCombined = [peppersLSB(257:512,:);baboonLSB(257:512,:)];
+LSBCombined = [peppersLSB(1:256,:);baboonLSB(257:512,:)];
 figure_num = 1;
 figure(figure_num)
 imshow(LSBCombined)
@@ -18,7 +18,7 @@ figure(figure_num);
 imgSeperate(LSBCombined);
 
 %% Yeung-Mintzer watermarked image
-Combined = [peppers(257:512,:);baboon0(257:512,:)]; % image combine 
+Combined = [peppers(1:256,:);baboon0(257:512,:)]; % image combine 
 WaterMarkExtracted = YMdecode(Combined,0); %Assume we know the key
 
 figure_num = figure_num + 1;
@@ -30,7 +30,7 @@ subplot(1,2,2)
 imshow(WaterMarkExtracted);
 
 peppers0 = imread('peppers0.tiff');
-YMAttack = [peppers0(257:512,:);baboon0(257:512,:)];
+YMAttack = [peppers0(1:256,:);baboon0(257:512,:)];
 YMWaterMarkExtracted = YMdecode(YMAttack,0);
 figure_num = figure_num + 1;
 figure(figure_num)
