@@ -39,3 +39,11 @@ imshow(YMAttack)
 title('Peppers0 Baboons0')
 subplot(1,2,2)
 imshow(YMWaterMarkExtracted);
+
+%% LSB Attack
+Attack1 = [peppers(1:256,:);baboon(257:512,:)];
+LSBAttack = LSBWaterMark(Attack1, Wtmk,3);
+figure_num = figure_num + 1
+figure(figure_num)
+imshow(LSBAttack)
+imgSeperate(LSBAttack);
