@@ -1,16 +1,10 @@
 close all; clear all; clc;
 format compact;
 
-PATH = {'imageOrigin1.JPG'};
+PATH = {'imageOrigin1.JPG','imageOrigin2.jpg','imageOrigin3.JPG','imageOrigin4.JPG','imageOrigin6.jpg','blockArtifacts1.tif'};
 
-IMG = imread(PATH{1});
+for i=1:length(PATH)
+    figure(i)
+    K = JpegDetection(PATH{i});
+end
 
-[r,c] = size(IMG);
-r = r/8-1;
-c = c/8-1;
-
-for i = 1:r
-    for j = 1:j
-        ref1 = 8*(i-1)+4;
-        Z1 = abs(IMG(ref1,ref1)-IMG(ref1,ref1+1)-IMG(ref1+1,ref1)+IMG(ref1+1,ref1+1));
-        ref2 = 
