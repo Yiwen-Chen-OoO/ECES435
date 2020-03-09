@@ -1,4 +1,4 @@
-function [K] = JpegDetection(PATH)
+PATH = "blockArtifacts3.tif"
 
 IMG = imread(PATH);% import the image file
 
@@ -31,5 +31,4 @@ K = sum(abs(K1-K2)); % calculate k value based on SUM of abs(K1-K2)
 title(['K = ',num2str(K)]); %K value 
 
 
-end
 
