@@ -1,4 +1,4 @@
-function [NewImg] = GammaCorrection(PATH,gamma)
+function [NewImg] = GammaCorrection(PATH,gamma,n_bin)
     img = imread(PATH);
     [Rows, Cols] = size(img);% get the size of img
     DImg = double(img);% convert img to double
@@ -13,7 +13,7 @@ function [NewImg] = GammaCorrection(PATH,gamma)
     imshow(NewImg);
     title(string(PATH));
     subplot(1,2,2);
-    [Count, Bin] = imhist(NewImg, 10);
+    [Count, Bin] = imhist(NewImg, n_bin);
     bar(Bin, Count);
     title(['\gamma = ',num2str(gamma)]);
     

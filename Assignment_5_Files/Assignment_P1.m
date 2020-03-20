@@ -7,7 +7,7 @@ format compact;
 
 %% 1. Contrast Enhancement
 PATH1 = {'imageCE1.tif','imageCE2.tif','imageCE3.tif','imageCE4.tif'};
-n_bin = 10; %num of bins
+n_bin = 256; %num of bins
 for i = 1:length(PATH1)
     IMG = imread(PATH1{i});
     figure(i);
@@ -30,7 +30,7 @@ Gamma = {0.7,1,1.3};
 for k = 1:length(Gamma)
     for j = 1:length(PATH2)
        figure
-       NewImg = GammaCorrection(PATH2{j},Gamma{k});
+       NewImg = GammaCorrection(PATH2{j},Gamma{k},n_bin);
        %Performing gamma correction to the img with respecte to gamma
        %value
     end
