@@ -43,6 +43,6 @@ subplot(1,2,1);
 imshow(IMG5);
 title('imageCE5.tif');
 subplot(1,2,2);
-[Count, Bin] = imhist(IMG,n_bin);
+[Count, Bin] = imhist(IMG5,n_bin);
 bar(Bin,Count);
 %get the img histogram and plot as bar 
