@@ -2,8 +2,8 @@ function [p] = Kirchner(PATH,lamda,tau,sigma)
 IMG = double(imread(PATH)); % Read Image
 [r c] = size(IMG); %Get ths size of IMG for proper display
 
-alpha = [-0.25 0.5 -0.25
-        0.5 0 0.5
+alpha = [-0.25 0.5 -0.25;
+        0.5 0 0.5;
         -0.25 0.5 -0.25]; % \alpha * matrix
 IMG_P = filter2(alpha, IMG); % Applied filer alphs, get IMG_Prediction
 e = IMG - IMG_P; % Calculate Error function by IMG - IMG_Prediction 
